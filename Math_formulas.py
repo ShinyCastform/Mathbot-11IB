@@ -5,27 +5,24 @@ Created on Fri Sep  7 19:18:26 2018
 @author: Bradyjomark
 """
 
-def area_of_a_parallelogram():
-    """
-    Prints the missing variable in the parallelogram
+from Math_formulas import *
+
+def core():
+    operation = input("Enter an operation : ")
+    if operation == 'end':
+        print("Program closed")
     
-    The user inputs should be two ints or floats and one ?
-    """
-    while True:
-        
-        A = input("Enter the Area ")
-        b = input("Enter the Base ")
-        h = input("Enter the Height ")
-        if A == '?':
-            print('The Area is : ' + str(int(b)*int(h)))
-            break
-        
-        elif b == '?':
-            print('The Base is : ' + str(int(A)/int(h)))
-            break
-        elif h == '?':
-            print('The Height is : ' + str(int(A)/int(b)))
-            break
-        
-        else:
-            print('You did not enter two ints/floats and a \'?\'')
+    elif operation == 'info':
+        print("Possible operations are : (area of a parallelogram, area of a triangle)")
+        core()
+    elif operation == 'area of a parallelogram':
+        area_of_a_parallelogram()
+        core()
+    elif operation == 'area of a triangle':
+        area_of_a_triangle()
+        core()
+    else:
+        print(str(operation) + " is sadly not supported by my program" + '\n' + 'type "info" to know all the supported programs')
+        core()
+
+core()
