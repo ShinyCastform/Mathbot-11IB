@@ -1,28 +1,53 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Sep  7 19:18:26 2018
-
-@author: Bradyjomark
-"""
-
-from Math_formulas import *
-
-def core():
-    operation = input("Enter an operation : ")
-    if operation == 'end':
-        print("Program closed")
+def area_of_a_parallelogram():
+    """
+    Prints the missing variable in the parallelogram
     
-    elif operation == 'info':
-        print("Possible operations are : (area of a parallelogram, area of a triangle)")
-        core()
-    elif operation == 'area of a parallelogram':
-        area_of_a_parallelogram()
-        core()
-    elif operation == 'area of a triangle':
-        area_of_a_triangle()
-        core()
-    else:
-        print(str(operation) + " is sadly not supported by my program" + '\n' + 'type "info" to know all the supported programs')
-        core()
+    The user inputs should be two ints or floats and one ?
+    """
+    while True:
+        
+        A = input("Enter the Area ")
+        b = input("Enter the Base ")
+        h = input("Enter the Height ")
+        if A == '?':
+            print('The Area is : ' + str(float(b)*float(h)))
+            return float(b)*float(h)
+        
+        elif b == '?':
+            print('The Base is : ' + str(float(A)/float(h)))
+            return float(A)/float(h)
+        elif h == '?':
+            print('The Height is : ' + str(float(A)/float(b)))
+            return float(A)/float(b)
+            
+        
+        else:
+            print('You did not enter two ints/floats and a \'?\'')
+            
 
-core()
+def area_of_a_triangle():
+    """
+    Prints the missing variable in the triangle
+    
+    The user inputs should be two ints or floats and one ?
+    """
+    while True:
+        
+        A = input("Enter the Area ")
+        b = input("Enter the Base ")
+        h = input("Enter the Height ")
+        if A == '?':
+            print('The Area is : ' + str(float(b)*float(h)*0.5))
+            return float(b)*float(h)*0.5
+            
+        
+        elif b == '?':
+            print('The Base is : ' + str(float(A)*2/float(h)))
+            return float(A)*2/float(h)
+            
+        elif h == '?':
+            print('The Height is : ' + str(float(A)*2/float(b)))
+            return float(A)*2/float(b)
+        
+        else:
+            print('You did not enter two ints/floats and a \'?\'')
